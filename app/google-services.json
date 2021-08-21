@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1064951088406",
+    "project_id": "chattingapp-9d417",
+    "storage_bucket": "chattingapp-9d417.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1064951088406:android:7d62afe89c98b906b53c37",
+        "android_client_info": {
+          "package_name": "com.vedant.chattingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1064951088406-jja9fl1b737fsphpglqup4skjepu73ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH1DMjHsr3-Q7GnZfVglPglMvPlbiEoYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1064951088406-jja9fl1b737fsphpglqup4skjepu73ps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
