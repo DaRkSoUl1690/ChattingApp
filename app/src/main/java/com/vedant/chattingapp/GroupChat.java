@@ -13,6 +13,7 @@ public class GroupChat extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding = ActivityGroupChatBinding.inflate(getLayoutInflater()) ;
+        binding = ActivityGroupChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+    }
 }
