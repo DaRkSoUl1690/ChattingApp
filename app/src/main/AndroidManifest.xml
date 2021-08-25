@@ -10,23 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChattingApp">
         <activity
+            android:name=".GroupChat"
+            android:exported="true" />
+        <activity
             android:name=".chatDetail"
             android:exported="true" />
         <activity
             android:name=".login_Activity"
             android:exported="true" />
         <activity android:name=".IntroductoryActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
