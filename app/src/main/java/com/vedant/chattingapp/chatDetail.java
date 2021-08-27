@@ -72,7 +72,7 @@ database.getReference().child("Chats")
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
 
-        messageModels.clear();
+      messageModels.clear();
         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
         {
             MessageModel model  = dataSnapshot1.getValue(MessageModel.class);

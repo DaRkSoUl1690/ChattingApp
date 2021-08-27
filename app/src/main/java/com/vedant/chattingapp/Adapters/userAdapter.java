@@ -8,6 +8,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 import com.vedant.chattingapp.Models.Users;
 import com.vedant.chattingapp.R;
@@ -43,6 +48,28 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
           Users users = list.get(position);
         Picasso.get().load(users.getProfilepic()).placeholder(R.drawable.userimg).into(holder.img);
           holder.userName.setText(users.getUserName());
+
+        FirebaseDatabase.getInstance().getReference().child("Chats")
+                .child(FirebaseAuth.getInstance().getUid() + users.getUserId())
+                .orderByChild("timestamp").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(snapshot.hasChildren())
+                {
+                    for (DataSnapshot snapshot1 : snapshot.getChildren())
+                    {
+                        holder.lastMessage.setText(snapshot1.child("message").getValue(String.class));
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
           holder.itemView.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View v) {
