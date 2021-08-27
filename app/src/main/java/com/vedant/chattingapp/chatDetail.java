@@ -45,7 +45,7 @@ public class chatDetail extends AppCompatActivity {
         String profilepic = getIntent().getStringExtra("profilepic");
 
         binding.textView4.setText(userName);
-        Picasso.get().load(profilepic).placeholder(R.drawable.userimg).into(binding.profileImage);
+        Picasso.get().load(profilepic).placeholder(R.drawable.user).into(binding.profileimage);
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,7 +72,7 @@ database.getReference().child("Chats")
     @Override
     public void onDataChange(DataSnapshot dataSnapshot) {
 
-      messageModels.clear();
+    messageModels.clear();
         for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren())
         {
             MessageModel model  = dataSnapshot1.getValue(MessageModel.class);

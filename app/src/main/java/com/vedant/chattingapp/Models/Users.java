@@ -2,15 +2,18 @@ package com.vedant.chattingapp.Models;
 
 public class Users {
 
-    String profilepic , userName ,mail,password,userId,lastMessage;
+    String profilepic , userName ,mail,password,userId,lastMessage,about;
 
-    public Users(String profilepic, String userName, String mail, String password, String userId, String lastMessage) {
+
+
+    public Users(String profilepic, String userName, String mail, String password, String userId, String lastMessage, String about) {
         this.profilepic = profilepic;
         this.userName = userName;
         this.mail = mail;
         this.password = password;
         this.userId = userId;
         this.lastMessage = lastMessage;
+        this.about = about;
     }
 
     public Users(){}
@@ -23,6 +26,14 @@ public class Users {
         this.mail = mail;
         this.password = password;
 
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     public String getProfilepic() {
@@ -72,4 +83,6 @@ public class Users {
     public void setLastMessage(String lastMessage) {
         this.lastMessage = lastMessage;
     }
+
+
 }
