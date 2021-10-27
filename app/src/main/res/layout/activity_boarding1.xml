@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B6AA3D"
+    android:background="#112383"
     tools:context=".Boarding.Boarding_1">
 
 
@@ -17,7 +17,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.244"
+        app:layout_constraintVertical_bias="0.264"
         app:srcCompat="@drawable/download2" />
 
     <TextView
@@ -25,11 +25,30 @@
         android:layout_width="50dp"
         android:layout_height="38dp"
         android:text="Skip"
+        android:autoSizeTextType="uniform"
         android:textSize="18dp"
+
+        android:textColor="#F1EFEF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.98"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="291dp"
+        android:layout_height="238dp"
+        android:autoSizeTextType="uniform"
+        android:text="@string/text_messaging_is_just_the_most_recent_focus_of_people_s_anxiety_what_people_are_really_worried_about_is_a_new_generation_gaining_control_of_what_they_see_as_their_language"
+        android:textColor="#ECECEC"
+        android:textSize="24sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

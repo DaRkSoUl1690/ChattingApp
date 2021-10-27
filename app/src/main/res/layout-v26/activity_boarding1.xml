@@ -4,50 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DF4A7C"
+    android:background="#112383"
     tools:context=".Boarding.Boarding_1">
 
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="280dp"
-        android:layout_height="205dp"
-        android:backgroundTint="#655581"
+        android:layout_width="272dp"
+        android:layout_height="206dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.221"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.212"
-        app:srcCompat="@drawable/download" />
+        app:layout_constraintVertical_bias="0.264"
+        app:srcCompat="@drawable/download2" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="50dp"
-        android:layout_height="38dp"
+        android:layout_width="36dp"
+        android:layout_height="32dp"
+        android:autoSizeTextType="uniform"
         android:text="Skip"
-        android:textColor="#EDE4E4"
+        android:textColor="#F1EFEF"
         android:textSize="18dp"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintHorizontal_bias="0.911"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.01" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="279dp"
-        android:layout_height="227dp"
-        android:text="“Good communication is just as stimulating as black coffee, and just as hard to sleep after.”"
-        android:textColor="#E1F3FB"
-        android:textSize="28dp"
+        android:id="@+id/textView11"
+        android:layout_width="291dp"
+        android:layout_height="238dp"
+        android:autoSizeTextType="uniform"
+        android:text="“Text messaging is just the most recent focus of people's anxiety; what people are really worried about is a new generation gaining control of what they see as their language.“"
+        android:textColor="#ECECEC"
+        android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.678" />
+        app:layout_constraintVertical_bias="0.75" />
 </androidx.constraintlayout.widget.ConstraintLayout>

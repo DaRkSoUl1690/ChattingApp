@@ -1,26 +1,33 @@
 package com.vedant.chattingapp.Adapters;
 
+import android.content.Context;
+
 import com.vedant.chattingapp.tab_fragments.Status_Fragment;
 import com.vedant.chattingapp.tab_fragments.call_Fragment;
 import com.vedant.chattingapp.tab_fragments.chat_Fragment;
 
-
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
+import androidx.lifecycle.Lifecycle;
+import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-public class fragmentAdapter extends FragmentStatePagerAdapter {
+public class fragmentAdapter extends FragmentStateAdapter {
 
-    public fragmentAdapter(@NonNull FragmentManager fm) {
-        super(fm);
+    public static final int NUM_PAGES = 3;
+    public Context context1;
+    int totalTabs1;
+
+    public fragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle
+            , Context context, int totalTabs) {
+        super(fragmentManager, lifecycle);
+        this.context1 = context;
+        this.totalTabs1 = totalTabs;
     }
 
     @NonNull
     @Override
-    public Fragment getItem(int position) {
-
+    public Fragment createFragment(int position) {
         switch (position) {
 
             case 0:
@@ -40,27 +47,9 @@ public class fragmentAdapter extends FragmentStatePagerAdapter {
     }
 
     @Override
-    public int getCount() {
-        return 3;
+    public int getItemCount() {
+        return NUM_PAGES;
     }
 
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
 
-        String title = null;
-
-        if(position == 0)
-        {
-            title="CHATS";
-        } if(position == 1)
-        {
-            title="STATUS";
-        } if(position == 2)
-        {
-            title="CALL";
-        }
-
-        return title;
-    }
 }

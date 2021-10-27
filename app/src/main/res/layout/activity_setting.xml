@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/wall"
     android:padding="5dp"
-    tools:context=".settingActivity">
+    tools:context=".Activities.settingActivity">
 
     <ImageView
         android:id="@+id/backArrow"

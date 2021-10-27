@@ -4,8 +4,6 @@ public class Users {
 
     String profilepic , userName ,mail,password,userId,lastMessage,about;
 
-
-
     public Users(String profilepic, String userName, String mail, String password, String userId, String lastMessage, String about) {
         this.profilepic = profilepic;
         this.userName = userName;

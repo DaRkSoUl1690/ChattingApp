@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#C68524"
+    android:background="#29932D"
     tools:context=".Boarding.Boarding_1">
 
 
@@ -17,8 +17,8 @@
         app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397"
-        app:srcCompat="@drawable/download3" />
+        app:layout_constraintVertical_bias="0.187"
+        app:srcCompat="@drawable/calling_icon" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab4"
@@ -33,4 +33,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.906" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="279dp"
+        android:layout_height="236dp"
+        android:shadowColor="#673131"
+        android:text="“Just in a professional world, sometimes a phone call is definitely more meaningful than a text.“"
+        android:textColor="#F1EFEC"
+        android:textColorHighlight="#6271C1"
+        android:textColorHint="#CD7F7F"
+        android:textSize="28dp"
+        android:textStyle="bold|italic"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.121"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.725" />
 </androidx.constraintlayout.widget.ConstraintLayout>

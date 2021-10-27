@@ -24,40 +24,36 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-
 public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
 
-    ArrayList<Users>  list;
+    ArrayList<Users> list;
     Context context;
 
     public userAdapter(ArrayList<Users> list, Context context) {
         this.list = list;
         this.context = context;
-
     }
 
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.show_user,parent,false);
-        return new ViewHolder(view) ;
+        View view = LayoutInflater.from(context).inflate(R.layout.show_user, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-          Users users = list.get(position);
+        Users users = list.get(position);
         Picasso.get().load(users.getProfilepic()).placeholder(R.drawable.user).into(holder.img);
-          holder.userName.setText(users.getUserName());
+        holder.userName.setText(users.getUserName());
 
         FirebaseDatabase.getInstance().getReference().child("Chats")
                 .child(FirebaseAuth.getInstance().getUid() + users.getUserId())
                 .orderByChild("timestamp").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if(snapshot.hasChildren())
-                {
-                    for (DataSnapshot snapshot1 : snapshot.getChildren())
-                    {
+                if (snapshot.hasChildren()) {
+                    for (DataSnapshot snapshot1 : snapshot.getChildren()) {
                         holder.lastMessage.setText(snapshot1.child("message").getValue(String.class));
                     }
                 }
@@ -65,21 +61,17 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
 
-          holder.itemView.setOnClickListener(new View.OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                  Intent intent = new Intent(context, chatDetail.class);
-                  intent.putExtra("userId",users.getUserId());
-                  intent.putExtra("profilepic",users.getProfilepic());
-                  intent.putExtra("username",users.getUserName());
-                  context.startActivity(intent);
-              }
-          });
+        holder.itemView.setOnClickListener(v -> {
+            Intent intent = new Intent(context, chatDetail.class);
+            intent.putExtra("userId", users.getUserId());
+            intent.putExtra("profilepic", users.getProfilepic());
+            intent.putExtra("username", users.getUserName());
+            context.startActivity(intent);
+        });
     }
 
     @Override
@@ -87,11 +79,10 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
         return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img;
         TextView userName, lastMessage;
-
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -103,7 +94,3 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
         }
     }
 }
-
-
-
-

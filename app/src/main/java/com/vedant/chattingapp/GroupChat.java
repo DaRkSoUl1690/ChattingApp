@@ -1,9 +1,5 @@
 package com.vedant.chattingapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -14,12 +10,17 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.vedant.chattingapp.Activities.MainActivity;
 import com.vedant.chattingapp.Adapters.chatAdapter;
 import com.vedant.chattingapp.Models.MessageModel;
 import com.vedant.chattingapp.databinding.ActivityGroupChatBinding;
 
 import java.util.ArrayList;
 import java.util.Date;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 public class GroupChat extends AppCompatActivity {
 
@@ -34,7 +35,7 @@ public class GroupChat extends AppCompatActivity {
         binding.back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(GroupChat.this,MainActivity.class);
+                Intent intent = new Intent(GroupChat.this, MainActivity.class);
                 startActivity(intent);
             }
         });

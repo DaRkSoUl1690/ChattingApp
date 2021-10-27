@@ -15,60 +15,53 @@ import java.util.ArrayList;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class chatAdapter extends RecyclerView.Adapter  {
+public class chatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     ArrayList<MessageModel> messageModels;
-    Context context;
+    Context mContext;
 
-    int SENDER_VIEW_TYPE =1;
-    int RECIEVER_VIEW_TYPE =2;
-
-
+    int SENDER_VIEW_TYPE = 1;
+    int RECEIVER_VIEW_TYPE = 2;
 
     public chatAdapter(ArrayList<MessageModel> messageModels, Context context) {
         this.messageModels = messageModels;
-        this.context = context;
+        this.mContext = context;
     }
 
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        if(viewType == SENDER_VIEW_TYPE) {
-            View view = LayoutInflater.from(context).inflate(R.layout.sample_,parent,false);
+        if (viewType == SENDER_VIEW_TYPE) {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.sample_, parent, false);
             return new senderView(view);
-        }
-       else {
-           View view = LayoutInflater.from(context).inflate(R.layout.sample_reciever,parent,false);
-           return new RecieverView(view);
+        } else {
+            View view = LayoutInflater.from(mContext).inflate(R.layout.sample_reciever, parent, false);
+            return new ReceiverView(view);
         }
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-    MessageModel messageModel = messageModels.get(position);
+        MessageModel messageModel = messageModels.get(position);
 
-    if(holder.getClass() == senderView.class)
-    {
-        ((senderView)holder).sendermsg.setText(messageModel.getMessage());
-    }
-    else {
-        ((RecieverView)holder).receiverMsg.setText(messageModel.getMessage());
-    }
+        if (holder.getClass() == senderView.class) {
+            ((senderView) holder).SenderMsg.setText(messageModel.getMessage());
+
+        } else {
+            ((ReceiverView) holder).receiverMsg.setText(messageModel.getMessage());
+        }
 
     }
 
     @Override
     public int getItemViewType(int position) {
 
-        if(messageModels.get(position).getuId().equals(FirebaseAuth.getInstance().getUid()))
-        {
+        if (messageModels.get(position).getuId().equals(FirebaseAuth.getInstance().getUid())) {
             return SENDER_VIEW_TYPE;
-        }
-        else
-        {
-            return RECIEVER_VIEW_TYPE;
+        } else {
+            return RECEIVER_VIEW_TYPE;
         }
 
     }
@@ -78,24 +71,33 @@ public class chatAdapter extends RecyclerView.Adapter  {
         return messageModels.size();
     }
 
-    public class RecieverView extends RecyclerView.ViewHolder {
+    /**
+     * VIEW_HOLDER-1
+     */
 
-        TextView receiverMsg,receivertime;
-        public RecieverView(@NonNull View itemView) {
+    public static class ReceiverView extends RecyclerView.ViewHolder {
+
+        TextView receiverMsg, ReceiverTime;
+
+        public ReceiverView(@NonNull View itemView) {
             super(itemView);
             receiverMsg = itemView.findViewById(R.id.textReciever);
-            receivertime = itemView.findViewById(R.id.recieverTime);
+            ReceiverTime = itemView.findViewById(R.id.recieverTime);
 
         }
     }
 
+    /**
+     * VIEW_HOLDER-2
+     */
 
-    public class senderView extends RecyclerView.ViewHolder {
+    public static class senderView extends RecyclerView.ViewHolder {
 
-        TextView sendermsg,senderTime;
+        TextView SenderMsg, senderTime;
+
         public senderView(@NonNull View itemView) {
             super(itemView);
-            sendermsg = itemView.findViewById(R.id.sendermsg);
+            SenderMsg = itemView.findViewById(R.id.sendermsg);
             senderTime = itemView.findViewById(R.id.sendertime);
         }
     }

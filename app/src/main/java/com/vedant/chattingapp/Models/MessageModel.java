@@ -26,8 +26,9 @@ public class MessageModel {
         return timestamp;
     }
 
-    public void setTimestamp(long timestamp) {
+    public int setTimestamp(long timestamp) {
         this.timestamp = timestamp;
+        return (int) timestamp;
     }
 
     long timestamp;

@@ -10,25 +10,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ChattingApp">
         <activity
-            android:name=".settingActivity"
-            android:exported="true" />
+            android:name=".Activities.settingActivity"
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".GroupChat"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".chatDetail"
-            android:exported="true" />
+            android:exported="true"
+            android:screenOrientation="portrait" />
         <activity
-            android:name=".login_Activity"
-            android:exported="true" />
-        <activity android:name=".IntroductoryActivity">
+            android:name=".Activities.login_Activity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustNothing" />
+
+        <activity
+            android:name=".Activities.IntroductoryActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-    </application>
 
+        <activity
+            android:name=".Activities.MainActivity"
+            android:screenOrientation="portrait" />
+    </application>
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

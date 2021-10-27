@@ -1,8 +1,4 @@
-package com.vedant.chattingapp;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
+package com.vedant.chattingapp.Activities;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -21,16 +17,21 @@ import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.vedant.chattingapp.Models.Users;
+import com.vedant.chattingapp.R;
 import com.vedant.chattingapp.databinding.ActivitySettingBinding;
 
 import java.util.HashMap;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
 public class settingActivity extends AppCompatActivity {
 
-   ActivitySettingBinding binding;
-     FirebaseStorage storage;
-     FirebaseAuth auth;
-     FirebaseDatabase database;
+    ActivitySettingBinding binding;
+    FirebaseStorage storage;
+    FirebaseAuth auth;
+    FirebaseDatabase database;
 
 
     @Override
