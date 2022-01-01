@@ -39,7 +39,6 @@ public class signUpFragment extends Fragment {
     ProgressDialog progressDialog;
     EditText email, password, name;
     Button login;
-//    float v = 0;
 
 
     public signUpFragment() {
@@ -47,10 +46,12 @@ public class signUpFragment extends Fragment {
     }
 
     @Override
-    public void onAttach(@NonNull Activity activity) {
-        // TODO Auto-generated method stub
-        super.onAttach(activity);
-        mContext = activity;
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        if (context instanceof Activity) {
+            mContext = context;
+        }
     }
 
     @Nullable
@@ -59,7 +60,6 @@ public class signUpFragment extends Fragment {
     public View onCreateView(@NonNull @NotNull LayoutInflater inflater, @Nullable @org.jetbrains.annotations.Nullable ViewGroup container, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.activity_login_frag1, container, false);
 
-        // context=container.getContext();
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -71,25 +71,6 @@ public class signUpFragment extends Fragment {
         password = root.findViewById(R.id.password1);
         login = root.findViewById(R.id.signup);
         name = root.findViewById(R.id.Name);
-//
-//        email.setTranslationY(500);
-//        password.setTranslationY(600);
-//        login.setTranslationY(800);
-//
-//        name.setTranslationY(700);
-//
-//        email.setAlpha(v);
-//        password.setAlpha(v);
-//        login.setAlpha(v);
-//     //  cPassword.setAlpha(v);
-//       name.setAlpha(v);
-//
-//        name.animate().translationY(0).alpha(1).setDuration(700).setStartDelay(500).start();
-//        email.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(600).start();
-//        password.animate().translationY(0).alpha(1).setDuration(900).setStartDelay(700).start();
-//        login.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(800).start();
-//     //   cPassword.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(700).start();
-
 
         login.setOnClickListener(v -> {
             try {

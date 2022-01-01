@@ -29,25 +29,26 @@ import androidx.fragment.app.Fragment;
 
 public class loginFragment extends Fragment {
 
-    private static final String TAG = "EmailPassword";
     Context mContext;
     FirebaseAuth mAuth;
     ProgressDialog progressDialog;
-
+    String emailAddress = "tiwarivedant.2690@gmail.com";
     EditText email, password;
     TextView textView;
     Button login;
-    float v = 0;
+
 
     public loginFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public void onAttach(Activity activity) {
-        // TODO Auto-generated method stub
-        super.onAttach(activity);
-        mContext = activity;
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+
+        if (context instanceof Activity) {
+            mContext = context;
+        }
     }
 
     @Nullable
@@ -68,28 +69,17 @@ public class loginFragment extends Fragment {
         textView = root.findViewById(R.id.textView3);
 
 
-//       email.setTranslationY(500);
-//        password.setTranslationY(600);
-//        login.setTranslationY(700);
-//        textView.setTranslationY(700);
-//
-//        email.setAlpha(v);
-//        password.setAlpha(v);
-//        login.setAlpha(v);
-//        textView.setAlpha(v);
-//
-//        email.animate().translationY(0).alpha(1).setDuration(700).setStartDelay(500).start();
-//        password.animate().translationY(0).alpha(1).setDuration(800).setStartDelay(600).start();
-//        textView.animate().translationY(0).alpha(1).setDuration(900).setStartDelay(700).start();
-//        login.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(800).start();
+        textView.setOnClickListener(v -> mAuth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getActivity(), "email send", Toast.LENGTH_SHORT).show();
 
+                    } else {
+                        Toast.makeText(getActivity(), "email failed",
+                                Toast.LENGTH_SHORT).show();
 
-        textView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
+                    }
+                }));
 
         login.setOnClickListener(v -> {
             try {
@@ -115,12 +105,6 @@ public class loginFragment extends Fragment {
                 e.printStackTrace();
             }
         });
-
-//         if(mAuth.getCurrentUser()!=null)
-//         {
-//             Intent intent = new Intent(getActivity(),MainActivity.class);
-//             startActivity(intent);
-//         }
 
 
         return root;

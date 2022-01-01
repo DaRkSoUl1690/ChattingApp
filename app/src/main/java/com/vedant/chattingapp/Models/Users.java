@@ -2,10 +2,11 @@ package com.vedant.chattingapp.Models;
 
 public class Users {
 
-    String profilepic , userName ,mail,password,userId,lastMessage,about;
+    String profilePic, userName, mail, password, userId, lastMessage, about;
 
-    public Users(String profilepic, String userName, String mail, String password, String userId, String lastMessage, String about) {
-        this.profilepic = profilepic;
+    public Users(String profilePic, String userName, String mail, String password, String userId,
+                 String lastMessage, String about) {
+        this.profilePic = profilePic;
         this.userName = userName;
         this.mail = mail;
         this.password = password;
@@ -14,7 +15,8 @@ public class Users {
         this.about = about;
     }
 
-    public Users(){}
+    public Users() {
+    }
 
     //SignUp Constructor
 
@@ -34,12 +36,12 @@ public class Users {
         this.about = about;
     }
 
-    public String getProfilepic() {
-        return profilepic;
+    public String getProfilePic() {
+        return profilePic;
     }
 
-    public void setProfilepic(String profilepic) {
-        this.profilepic = profilepic;
+    public void setProfilePic(String profilePic) {
+        this.profilePic = profilePic;
     }
 
     public String getUserName() {

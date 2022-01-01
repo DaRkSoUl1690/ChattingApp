@@ -2,9 +2,7 @@ package com.vedant.chattingapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -17,6 +15,7 @@ import com.vedant.chattingapp.databinding.ActivityGroupChatBinding;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,69 +30,57 @@ public class GroupChat extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityGroupChatBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-   getSupportActionBar().hide();
-        binding.back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(GroupChat.this, MainActivity.class);
-                startActivity(intent);
-            }
+        Objects.requireNonNull(getSupportActionBar()).hide();
+        binding.back.setOnClickListener(v -> {
+            Intent intent = new Intent(GroupChat.this, MainActivity.class);
+            startActivity(intent);
         });
 
         final FirebaseDatabase database = FirebaseDatabase.getInstance();
-         final ArrayList<MessageModel> messageModels = new ArrayList<>();
+        final ArrayList<MessageModel> messageModels = new ArrayList<>();
 
-         final String senderId=FirebaseAuth.getInstance().getUid();
-         binding.textView4.setText("FriendsGroup");
+        final String senderId = FirebaseAuth.getInstance().getUid();
 
 
-        final chatAdapter  adapter = new chatAdapter(messageModels,this);
+        final chatAdapter adapter = new chatAdapter(messageModels, this);
         binding.recyclerView.setAdapter(adapter);
 
         LinearLayoutManager manager = new LinearLayoutManager(this);
         binding.recyclerView.setLayoutManager(manager);
 
 
-           database.getReference().child("Group chat")
-                   .addValueEventListener(new ValueEventListener() {
-                       @Override
-                       public void onDataChange(@NonNull DataSnapshot snapshot) {
-                           messageModels.clear();
-                           for (DataSnapshot dataSnapshot: snapshot.getChildren())
-                           {
-                               MessageModel model = dataSnapshot.getValue(MessageModel.class);
-                               messageModels.add(model);
-                           }
-                           adapter.notifyDataSetChanged();
-                       }
+        database.getReference().child("Group chat")
+                .addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        messageModels.clear();
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                            MessageModel model = dataSnapshot.getValue(MessageModel.class);
+                            messageModels.add(model);
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
 
-                       @Override
-                       public void onCancelled(@NonNull DatabaseError error) {
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
 
-                       }
-                   });
-
+                    }
+                });
 
 
-         binding.send.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View v) {
-                 final String message = binding.messagebar.getText().toString();
+        binding.send.setOnClickListener(v -> {
+            final String message = binding.messageBar.getText().toString();
 
-                 final MessageModel model = new MessageModel(senderId,message);
-                 model.setTimestamp(new Date().getTime());
-                 binding.messagebar.setText(" ");
+            final MessageModel model = new MessageModel(senderId, message);
+            model.setTimeStamp(new Date().getTime());
+            binding.messageBar.setText(" ");
 
-                 database.getReference().child("Group chat")
-                                        .push()
-                         .setValue(model).addOnSuccessListener(new OnSuccessListener<Void>() {
-                     @Override
-                     public void onSuccess(Void unused) {
+            database.getReference().child("Group chat")
+                    .push()
+                    .setValue(model).addOnSuccessListener(unused -> {
 
-                     }
-                 });
-             }
-         });
+            });
+        });
 
     }
 }

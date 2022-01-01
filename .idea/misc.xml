@@ -3,17 +3,18 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/drawable/back_reciver.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/drawable/back_reciver.xml" value="0.25343999226562525" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/drawable/back_snder.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/drawable/shape1.xml" value="0.2552083333333333" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/drawable/shape2.xml" value="0.2552083333333333" />
+        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout-v23/activity_setting.xml" value="0.21458333333333332" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout-v26/activity_boarding1.xml" value="0.21458333333333332" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout-v26/activity_introductory.xml" value="0.21458333333333332" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_boarding1.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_boarding2.xml" value="0.2390625" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_boarding3.xml" value="0.2390625" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_chat_detail.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_group_chat.xml" value="0.2390625" />
+        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_group_chat.xml" value="0.25343999226562525" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_introductory.xml" value="0.2390625" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_login.xml" value="0.19199999414062519" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/activity_login2.xml" value="0.2390625" />
@@ -23,8 +24,8 @@
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/fragment_call_.xml" value="0.225" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/fragment_chat_.xml" value="0.2353846153846154" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/fragment_status_.xml" value="0.15925925925925927" />
-        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/sample_.xml" value="0.5145599842968755" />
-        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/sample_reciever.xml" value="0.38399998828125037" />
+        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/sample_.xml" value="0.25343999226562525" />
+        <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/sample_reciever.xml" value="1.2810945273631842" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/layout/show_user.xml" value="0.38399998828125037" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/menu/menu.xml" value="0.25343999226562525" />
         <entry key="..\:/AndroidStudioProjects/ChattingApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2552083333333333" />

@@ -82,7 +82,7 @@ public class chatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public ReceiverView(@NonNull View itemView) {
             super(itemView);
             receiverMsg = itemView.findViewById(R.id.textReciever);
-            ReceiverTime = itemView.findViewById(R.id.recieverTime);
+//            ReceiverTime = itemView.findViewById(R.id.recieverTime);
 
         }
     }
@@ -98,7 +98,7 @@ public class chatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
         public senderView(@NonNull View itemView) {
             super(itemView);
             SenderMsg = itemView.findViewById(R.id.sendermsg);
-            senderTime = itemView.findViewById(R.id.sendertime);
+//          senderTime = itemView.findViewById(R.id.sendertime);
         }
     }
 

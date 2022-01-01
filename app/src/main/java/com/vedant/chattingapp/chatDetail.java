@@ -45,11 +45,11 @@ public class chatDetail extends AppCompatActivity {
         final String senderId = auth.getUid();
         final String ReceiveId = getIntent().getStringExtra("userId");
         final String userName = getIntent().getStringExtra("username");
-        final String ProfilePic = getIntent().getStringExtra("profilepic");
+        final String ProfilePic = getIntent().getStringExtra("profilePic");
 
 
         binding.textView4.setText(userName);
-        Picasso.get().load(ProfilePic).placeholder(R.drawable.user).into(binding.profileimage);
+        Picasso.get().load(ProfilePic).placeholder(R.drawable.user).into(binding.profileImage);
 
         //BACK BUTTON
         binding.back.setOnClickListener(v -> {
@@ -69,11 +69,11 @@ public class chatDetail extends AppCompatActivity {
 
         binding.send.setOnClickListener(v -> {
 
-            String message = binding.messagebar.getText().toString();
+            String message = binding.messageBar.getText().toString();
             if (!message.equals("")) {
                 final MessageModel messageModel = new MessageModel(senderId, message);
-                messageModel.setTimestamp(new Date().getTime());
-                binding.messagebar.setText("");
+                messageModel.setTimeStamp(new Date().getTime());
+                binding.messageBar.setText("");
 
                 database.getReference().child("Chats")
                         .child(senderRoom)

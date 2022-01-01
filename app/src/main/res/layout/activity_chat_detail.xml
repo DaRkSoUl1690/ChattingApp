@@ -16,7 +16,7 @@
         android:orientation="horizontal">
 
         <EditText
-            android:id="@+id/messagebar"
+            android:id="@+id/messageBar"
             android:layout_width="303dp"
             android:layout_height="35dp"
 
@@ -24,19 +24,21 @@
 
             android:backgroundTint="#F1EBEB"
             android:ems="10"
-            android:hint="Enter Your Message"
+            android:autofillHints="@string/enter_your_message"
             android:inputType="textPersonName"
-            android:paddingLeft="10dp"
-            android:paddingRight="5dp" />
+            android:hint="@string/enter_your_message"
+            android:paddingEnd="5dp"
+            android:paddingStart="10dp" />
 
         <ImageView
             android:id="@+id/send"
             android:layout_width="78dp"
             android:layout_height="32dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="5dp"
+            android:layout_marginStart="5dp"
             android:backgroundTint="#F3F3F3"
             app:srcCompat="@drawable/send"
+            android:contentDescription="@string/todo"
             app:tint="#F6F6F6" />
 
     </LinearLayout>
@@ -72,6 +74,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.545"
                 app:srcCompat="@drawable/left_arrow"
+                android:contentDescription="@string/todo"
                 app:tint="#FFFFFF" />
 
             <ImageView
@@ -84,6 +87,7 @@
                 app:layout_constraintStart_toEndOf="@+id/textView4"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/call"
+                android:contentDescription="@string/todo"
                 app:tint="#FFFFFF" />
 
 
@@ -98,6 +102,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.764"
                 app:srcCompat="@drawable/video_call"
+                android:contentDescription="@string/todo"
                 app:tint="#FBFAFA" />
 
             <ImageView
@@ -111,15 +116,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/menu"
+                android:contentDescription="@string/todo"
                 app:tint="#FFFFFF" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="120dp"
                 android:layout_height="26dp"
-                android:paddingLeft="10dp"
-                android:text="TextView"
-                android:textSize="18dp"
+                android:paddingEnd="10dp"
+                android:paddingStart="10dp"
+                android:text="@string/username"
+                android:textSize="18sp"
                 android:textStyle="normal|bold|italic"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -129,7 +136,7 @@
                 app:layout_constraintVertical_bias="0.533" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profileimage"
+                android:id="@+id/profileImage"
                 android:layout_width="55dp"
                 android:layout_height="45dp"
 

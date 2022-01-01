@@ -25,6 +25,7 @@ public class fragmentAdapter extends FragmentStateAdapter {
         this.totalTabs1 = totalTabs;
     }
 
+
     @NonNull
     @Override
     public Fragment createFragment(int position) {

@@ -5,6 +5,23 @@
     <string name="web_client_id" translatable="false">1064951088406-u5asflvnaloo8c8s34oe4abf9j6dq5ve.apps
         .googleusercontent.com</string>
     <string name="text_messaging_is_just_the_most_recent_focus_of_people_s_anxiety_what_people_are_really_worried_about_is_a_new_generation_gaining_control_of_what_they_see_as_their_language">“Text messaging is just the most recent focus of people\'s anxiety; what people are really worried about is a new generation gaining control of what they see as their language.“</string>
+    <string name="username">Username</string>
+    <string name="last_message">Last Message</string>
+    <string name="login">LOGIN</string>
+    <string name="email">Email</string>
+    <string name="todo">TODO</string>
+    <string name="usernameSetting">USERNAME</string>
+    <string name="enter_your_username">Enter Your Username</string>
+    <string name="about">ABOUT</string>
+    <string name="about_yourself">About Yourself</string>
+    <string name="save">Save</string>
+    <string name="about_us">About Us</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="invite_a_friend">Invite a Friend</string>
+    <string name="notification">Notification</string>
+    <string name="help">Help</string>
+    <string name="enter_your_message">Enter Your Message</string>
+    <string name="groupChat">GroupChat</string>
 
 
 </resources>

@@ -44,7 +44,7 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Users users = list.get(position);
-        Picasso.get().load(users.getProfilepic()).placeholder(R.drawable.user).into(holder.img);
+        Picasso.get().load(users.getProfilePic()).placeholder(R.drawable.user).into(holder.img);
         holder.userName.setText(users.getUserName());
 
         FirebaseDatabase.getInstance().getReference().child("Chats")
@@ -68,7 +68,7 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, chatDetail.class);
             intent.putExtra("userId", users.getUserId());
-            intent.putExtra("profilepic", users.getProfilepic());
+            intent.putExtra("profilePic", users.getProfilePic());
             intent.putExtra("username", users.getUserName());
             context.startActivity(intent);
         });
@@ -88,7 +88,7 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img = itemView.findViewById(R.id.profileimage);
+            img = itemView.findViewById(R.id.profileImage);
             userName = itemView.findViewById(R.id.userName);
             lastMessage = itemView.findViewById(R.id.lastMessage);
         }
