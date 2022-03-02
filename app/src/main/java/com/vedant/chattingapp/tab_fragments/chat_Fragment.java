@@ -33,7 +33,7 @@ public class chat_Fragment extends Fragment {
     }
 
     FragmentChatBinding binding;
-    ArrayList<Users>  list = new ArrayList<>();
+    ArrayList<Users> list = new ArrayList<>();
     FirebaseDatabase database;
 
     @Override
@@ -51,7 +51,7 @@ public class chat_Fragment extends Fragment {
 
         database.getReference().child("Users").addValueEventListener(new ValueEventListener() {
             @Override
-            public void onDataChange(@NonNull  DataSnapshot snapshot) {
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 list.clear();
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {

@@ -63,6 +63,7 @@ public class signUpFragment extends Fragment {
 
         mAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
+        //progressDialog with title and message....
         progressDialog = new ProgressDialog(mContext);
         progressDialog.setTitle("creating account");
         progressDialog.setMessage("we are creating your account");
@@ -87,6 +88,7 @@ public class signUpFragment extends Fragment {
                             Users users = new Users(name.getText().toString(), email.getText().toString(), password.getText().toString());
 
                             String id = Objects.requireNonNull(task.getResult().getUser()).getUid();
+
                             database.getReference().child("Users").child(id).setValue(users);
 
 

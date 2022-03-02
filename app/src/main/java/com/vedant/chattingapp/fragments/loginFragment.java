@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +38,7 @@ public class loginFragment extends Fragment {
     EditText email, password;
     TextView textView;
     Button login;
+    ProgressDialog proDialog;
 
 
     public loginFragment() {
@@ -58,9 +61,11 @@ public class loginFragment extends Fragment {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.activity_login2, container, false);
 
         mAuth = FirebaseAuth.getInstance();
-        progressDialog = new ProgressDialog(mContext);
-        progressDialog.setTitle("Login");
-        progressDialog.setMessage("Login to your account");
+        // progress dialog with message and title
+
+//        progressDialog = new ProgressDialog(mContext);
+//        progressDialog.setTitle("Login");
+//        progressDialog.setMessage("Login to your account");
 
 
         email = root.findViewById(R.id.email);
@@ -84,22 +89,32 @@ public class loginFragment extends Fragment {
         login.setOnClickListener(v -> {
             try {
                 if (email != null && password != null) {
-                    progressDialog.show();
+//                    progressDialog.show();
+                    proDialog = ProgressDialog.show(mContext, null, null, false, true);
+                    proDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                    proDialog.setContentView(R.layout.progress_bar);
+
                     mAuth.signInWithEmailAndPassword(email.getText().toString(),
                             password.getText().toString()).addOnCompleteListener(task -> {
-                        progressDialog.dismiss();
-
+                        // used with message and title
+//                        progressDialog.dismiss();
+//                        proDialog.setCancelable(true);
+                        proDialog.dismiss();
                         if (task.isSuccessful()) {
                             Intent intent = new Intent(getActivity(), MainActivity.class);
                             startActivity(intent);
                         } else {
+
                             Toast.makeText(mContext, Objects.requireNonNull(task.getException()).getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
                 }
             } catch (Exception e) {
-                progressDialog.dismiss();
+//              progressDialog.dismiss();
+//                proDialog.setCancelable(true);
+
+
                 Toast.makeText(getActivity(), "please fill your Email and Password",
                         Toast.LENGTH_SHORT).show();
                 e.printStackTrace();

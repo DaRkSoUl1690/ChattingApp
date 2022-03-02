@@ -49,10 +49,10 @@ public class MainActivity extends AppCompatActivity {
                         tab.setText("CHATS");
                     }
                     if (position == 1) {
-                        tab.setText("STATUS");
+                        tab.setText("USER POST");
                     }
                     if (position == 2) {
-                        tab.setText("CALL");
+                        tab.setText("SHARE POST");
                     }
                 }
         ).attach();

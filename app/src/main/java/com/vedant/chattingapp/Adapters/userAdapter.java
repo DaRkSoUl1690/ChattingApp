@@ -44,10 +44,14 @@ public class userAdapter extends RecyclerView.Adapter<userAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Users users = list.get(position);
+        // set image from the list we fetched from firebase in chat_fragment if found , otherwise
+        // not
         Picasso.get().load(users.getProfilePic()).placeholder(R.drawable.user).into(holder.img);
+        // set username from the list we fetched from firebase in chat_fragment
         holder.userName.setText(users.getUserName());
 
         FirebaseDatabase.getInstance().getReference().child("Chats")
+                // sus
                 .child(FirebaseAuth.getInstance().getUid() + users.getUserId())
                 .orderByChild("timestamp").limitToLast(1).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

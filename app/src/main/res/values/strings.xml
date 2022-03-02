@@ -2,8 +2,7 @@
     <string name="app_name">ChattingApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="web_client_id" translatable="false">1064951088406-u5asflvnaloo8c8s34oe4abf9j6dq5ve.apps
-        .googleusercontent.com</string>
+    <string name="web_client_id">1064951088406-u5asflvnaloo8c8s34oe4abf9j6dq5ve.apps.googleusercontent.com</string>
     <string name="text_messaging_is_just_the_most_recent_focus_of_people_s_anxiety_what_people_are_really_worried_about_is_a_new_generation_gaining_control_of_what_they_see_as_their_language">“Text messaging is just the most recent focus of people\'s anxiety; what people are really worried about is a new generation gaining control of what they see as their language.“</string>
     <string name="username">Username</string>
     <string name="last_message">Last Message</string>

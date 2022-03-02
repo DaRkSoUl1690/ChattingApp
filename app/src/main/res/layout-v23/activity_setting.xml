@@ -83,17 +83,6 @@
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/etUserName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:autofillHints="Enter Your Username"
-                android:ems="10"
-                android:hint="@string/enter_your_username"
-                android:inputType="textPersonName"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white" />
-
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
@@ -104,6 +93,17 @@
                 android:textColor="@color/white"
                 android:textSize="15sp"
                 android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/etUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:autofillHints="Enter Your Username"
+                android:ems="10"
+                android:hint="@string/enter_your_username"
+                android:inputType="textPersonName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white" />
 
         </LinearLayout>
 
